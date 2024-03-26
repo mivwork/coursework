@@ -7,28 +7,28 @@ using System.Threading.Tasks;
 
 namespace model.DataAccess
 {
-    internal class ConnectDB
+    public class ConnectDB
     {
         private readonly string _connectionString;
 
-        public ConnectDB(string connectionString)
+        public ConnectDB()
         {
-            _connectionString = connectionString;
+            _connectionString = "Host=26.133.59.159;Username=newuser;Password=newpassword;Database=postgres";
         }
 
-        public bool CheckUserCredentials(string login, string password)
+        public string CheckUserCredentials()
         {
-            bool result = false;
+            string result = "";
 
             using var con = new NpgsqlConnection(_connectionString);
             try
             {
                 con.Open();
-                Console.WriteLine("Подключение к базе данных установлено.");
+                result = "Подключение к базе данных установлено.";
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Ошибка при подключении к базе данных: " + ex.Message);
+                result = "Ошибка при подключении к базе данных: " + ex.Message;
             }
             return result;
         }

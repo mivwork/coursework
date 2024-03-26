@@ -1,4 +1,7 @@
-﻿using Prism.Mvvm;
+﻿using model.DataAccess;
+using Prism.Commands;
+using Prism.Mvvm;
+using System.Windows;
 
 namespace coursework.ViewModels
 {
@@ -13,7 +16,16 @@ namespace coursework.ViewModels
 
         public MainWindowViewModel()
         {
+            ShowMessageCommand = new DelegateCommand(ShowMessage);
+            ShowMessage();
+        }
 
+        public DelegateCommand ShowMessageCommand { get; private set; }
+
+        private void ShowMessage()
+        {
+            ConnectDB A = new ConnectDB();
+            MessageBox.Show(A.CheckUserCredentials());
         }
     }
 }
