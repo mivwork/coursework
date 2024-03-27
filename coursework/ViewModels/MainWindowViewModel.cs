@@ -16,11 +16,8 @@ namespace coursework.ViewModels
 
         public MainWindowViewModel()
         {
-            ShowMessageCommand = new DelegateCommand(ShowMessage);
             ShowMessage();
         }
-
-        public DelegateCommand ShowMessageCommand { get; private set; }
 
         private void ShowMessage()
         {
