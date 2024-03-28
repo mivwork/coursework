@@ -21,7 +21,7 @@ namespace coursework.ViewModels
 
         private void ShowMessage()
         {
-            ConnectDB A = new ConnectDB();
+            ConnectDB A = new ConnectDB();//вынести подключение из конструктора
             MessageBox.Show(A.CheckUserCredentials());
         }
     }

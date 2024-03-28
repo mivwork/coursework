@@ -5,23 +5,9 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
   <ItemGroup>
-    <Page Remove="Views\PrismWindow1.xaml" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Views\PrismWindow1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\model\model.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Views\PrismWindow1.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

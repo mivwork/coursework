@@ -1,4 +1,5 @@
 ﻿using coursework.Views;
+using model;
 using Prism.Ioc;
 using System.Windows;
 
