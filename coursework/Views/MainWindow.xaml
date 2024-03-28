@@ -3,8 +3,35 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:prism="http://prismlibrary.com/"
         prism:ViewModelLocator.AutoWireViewModel="True"
-        Title="{Binding Title}" Height="350" Width="525" >
-    <Grid>
-        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+        Title="{Binding Title}" Height="373" Width="547" >
+    <Grid Background="#FF0014CF">
+        <Label Content="Welcome" HorizontalAlignment="Left" Margin="189,64,0,0" VerticalAlignment="Top" Foreground="White" Height="64" Width="160" FontSize="36"/>
+        <TextBox x:Name="LoginTextBox" Grid.Row="0" Margin="195,144,10,165" />
+        <PasswordBox x:Name="PasswordBox" Margin="195,190,10,119" RenderTransformOrigin="0.5,0.5" >
+            <PasswordBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-3.166"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.497"/>
+                </TransformGroup>
+            </PasswordBox.RenderTransform>
+        </PasswordBox>
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="LoginButton" Content="Login" Margin="5" />
+            <Button x:Name="CancelButton" Content="Cancel" Margin="5" />
+        </StackPanel>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
     </Grid>
 </Window>

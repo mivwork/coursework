@@ -1,0 +1,27 @@
+﻿<Window x:Class="model.PrismWindow1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"             
+             prism:ViewModelLocator.AutoWireViewModel="True" Width="503">
+    <Grid Background="#FF0014CF">
+        <Label Content="Welcome" HorizontalAlignment="Left" Margin="189,82,0,0" VerticalAlignment="Top" Foreground="White" Height="64" Width="160" FontSize="36"/>
+        <TextBox x:Name="LoginTextBox" Grid.Row="0" Margin="195,174,10,135" />
+        <PasswordBox x:Name="PasswordBox" Margin="195,222,10,90" />
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="LoginButton" Content="Login" Margin="5" />
+            <Button x:Name="CancelButton" Content="Cancel" Margin="5" />
+        </StackPanel>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+    </Grid>
+</Window>
