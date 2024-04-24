@@ -8,6 +8,7 @@ namespace coursework.ViewModels
     public class MainWindowViewModel : BindableBase
     {
         private string _title = "Prism Application";
+        MyDbContext A = new MyDbContext();
         public string Title
         {
             get { return _title; }
@@ -21,8 +22,7 @@ namespace coursework.ViewModels
 
         private void ShowMessage()
         {
-            ConnectDB A = new ConnectDB();//вынести подключение из конструктора
-            MessageBox.Show(A.CheckUserCredentials());
+            MessageBox.Show(A.CheckUserCredentials()); //Проверка подлючения
         }
     }
 }
