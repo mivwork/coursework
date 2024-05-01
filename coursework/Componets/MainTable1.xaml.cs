@@ -16,27 +16,13 @@ using System.Windows.Shapes;
 namespace coursework.Componets
 {
     /// <summary>
-    /// Логика взаимодействия для Autorization.xaml
+    /// Логика взаимодействия для MainTable1.xaml
     /// </summary>
-    public partial class Autorization : UserControl
+    public partial class MainTable1 : UserControl
     {
-        public Autorization()
+        public MainTable1()
         {
             InitializeComponent();
         }
-
-        public event EventHandler ButtonClick;
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            // вызов события ButtonClick
-            ButtonClick?.Invoke(this, EventArgs.Empty);
-        }
-
-        public string LoginValue
-        {
-            get { return LoginTextBox.Text; }
-        }
-
     }
 }

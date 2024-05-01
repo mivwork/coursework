@@ -5,40 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:wm="clr-namespace:coursework.ViewModels"
+        xmlns:comp="clr-namespace:coursework.Componets"
         mc:Ignorable="d" 
         prism:ViewModelLocator.AutoWireViewModel="True"
         d:DataContext="{d:DesignInstance wm:MainWindowViewModel}"
-        Title="{Binding Title, FallbackValue='hello'}" Height="373" Width="547" >
-    <Grid Background="#FF0014CF">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="*"/>
-            <ColumnDefinition Width="200"/>
-            <ColumnDefinition Width ="*"/>
-        </Grid.ColumnDefinitions>
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="200"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel.Resources>
-                <Style TargetType="TextBlock">
-                    <Setter Property="HorizontalAlignment" Value="Center"/>
-                    <Setter Property="Foreground" Value="white"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Setter Property="Margin" Value="1 0"/>
-                </Style>
-            </StackPanel.Resources>
-            <TextBlock Text="Welcome" Height="64" FontSize="36"/>
-            <TextBlock Text="Login"/>  
-            <TextBox x:Name="LoginTextBox" Grid.Row="0" Margin="0" />
-            <TextBlock Text="Password"/>
-            <PasswordBox x:Name="PasswordBox" Margin="0" />
-            <Button x:Name="LoginButton" Content="Login" Width="100" Background="LightGreen" Margin="10"/>
-
-        </StackPanel>
-
-    </Grid>
+        Background="Transparent"
+        Title="{Binding Title, FallbackValue='hello'}" Height="400" Width="600" >
+    <DockPanel>
+        <StatusBar DockPanel.Dock="Bottom" Height="22">
+            <StatusBarItem>
+                <TextBlock Text="{Binding DatabaseConnectionStatus, FallbackValue='Нет подключения к БД'}" />
+            </StatusBarItem>
+        </StatusBar>
+        <!--<Frame x:Name="MainFrame" />-->
+        <ContentControl Grid.Row="1" x:Name="contentControl"/>
+            <!--<comp:Autorization DockPanel.Dock="Top"/>-->
+    </DockPanel>
+    
 </Window>

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using model.Models;
 using Npgsql;
 using System;
@@ -60,13 +61,16 @@ namespace model.DataAccess
         public DbSet<Model_clock> model_clock { get; set; }
         public DbSet<Status_clock> status_clock { get; set; }
         public DbSet<Users> users { get; set; }
+        
+        //public MyDbContext context = new MyDbContext();
+        
 
-        public string CheckUserCredentials()
+
+    public string CheckUserCredentials()
         {
             string result = "";
-
-            using var context = new MyDbContext();
-            try
+            var context = new MyDbContext();
+                try
             {
                 var users = context.clock.ToList();
                 result = "Подключение к базе данных установлено.";
@@ -76,6 +80,21 @@ namespace model.DataAccess
                 result = "Ошибка при подключении к базе данных: " + ex.Message;
             }
             return result;
+        }
+
+        public bool LoginAndPassword(string login)
+        {
+            var context = new MyDbContext();
+                var user = context.users.Where(u => u.login == login).FirstOrDefault();
+
+            if (user != null)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
     }

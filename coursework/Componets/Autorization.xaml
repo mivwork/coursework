@@ -5,9 +5,22 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:coursework.Componets"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="200">
+             d:DesignHeight="400" d:DesignWidth="600">
 
-    <StackPanel Grid.Row="1" Grid.Column="1">
+    <Grid Background="#FF0014CF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width ="*"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width ="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="1" Grid.Column="1">
         <StackPanel.Resources>
             <Style TargetType="TextBlock">
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -21,7 +34,8 @@
         <TextBox x:Name="LoginTextBox" Grid.Row="0" Margin="0" />
         <TextBlock Text="Password"/>
         <PasswordBox x:Name="PasswordBox" Margin="0" />
-        <Button x:Name="LoginButton" Content="Login" Width="100" Background="LightGreen" Margin="10"/>
+         <Button x:Name="LoginButton" Content="Login" Width="100" Background="LightGreen" Margin="10" Click="LoginButton_Click"/>
 
     </StackPanel>
+    </Grid>
 </UserControl>
