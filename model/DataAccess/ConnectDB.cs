@@ -9,6 +9,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
 
 namespace model.DataAccess
 {
@@ -87,8 +88,25 @@ namespace model.DataAccess
         {
             var context = new MyDbContext();
             var user = context.users.Where(u => u.login == login).FirstOrDefault();
-            var pass = context.users.Where(u => u.password == password).FirstOrDefault();
-            if (user != null && pass != null)
+            string pass = null;
+            bool isValidPassword = false;
+
+            if (user != null)
+            {
+                pass = context.users.Where(u => u.login == login).FirstOrDefault().password;
+            }
+            // Хеширование пароля
+            //string password1 = "1234";
+            //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password1);
+
+            string enteredPassword = password;
+            if (pass != null)
+            {
+                isValidPassword = BCrypt.Net.BCrypt.Verify(enteredPassword, pass);
+            }
+
+
+            if (user != null && isValidPassword != false)
             {
                 return true;
             }
