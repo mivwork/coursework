@@ -13,7 +13,7 @@ namespace coursework.Views
     public partial class MainWindow : Window
     {
         Autorization autorization = new Autorization();
-        MainTable1 mainTable1 = new MainTable1();
+        MainForm mainTable1 = new MainForm();
 
         Users users = new Users();
         MyDbContext B = new MyDbContext();
@@ -27,17 +27,14 @@ namespace coursework.Views
 
         private void Component_ButtonClickLogin(object sender, EventArgs e)
         {
-            if (B.LoginAndPassword(autorization.LoginValue) == true)
+            if (B.LoginAndPassword(autorization.LoginValue, autorization.PasswordValue) == true)
             {
                 contentControl.Content = mainTable1;
             }
             else
             {
-                MessageBox.Show("Не правильный логин или пароль");
+                MessageBox.Show(this, "Не правильный логин или пароль!", "Ошибка!");
             }
-            
         }
-
-
     }
 }

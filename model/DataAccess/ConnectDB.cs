@@ -5,6 +5,7 @@ using model.Models;
 using Npgsql;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -82,12 +83,12 @@ namespace model.DataAccess
             return result;
         }
 
-        public bool LoginAndPassword(string login)
+        public bool LoginAndPassword(string login, string password)
         {
             var context = new MyDbContext();
-                var user = context.users.Where(u => u.login == login).FirstOrDefault();
-
-            if (user != null)
+            var user = context.users.Where(u => u.login == login).FirstOrDefault();
+            var pass = context.users.Where(u => u.password == password).FirstOrDefault();
+            if (user != null && pass != null)
             {
                 return true;
             }
@@ -96,6 +97,16 @@ namespace model.DataAccess
                 return false;
             }
         }
+
+        public List<Clock> getDataClock()
+        {
+            var context = new MyDbContext();
+            List<Clock> data = context.clock.ToList();
+
+            // Вернуть список объектов
+            return data;
+        }
+
 
     }
 

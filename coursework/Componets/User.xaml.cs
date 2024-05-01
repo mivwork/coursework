@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace coursework.Componets
 {
     /// <summary>
-    /// Логика взаимодействия для MainTable1.xaml
+    /// Логика взаимодействия для User.xaml
     /// </summary>
-    public partial class MainTable1 : UserControl
+    public partial class User : UserControl
     {
-        public MainTable1()
+        public User()
         {
             InitializeComponent();
         }
