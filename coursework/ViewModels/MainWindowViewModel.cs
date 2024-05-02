@@ -1,16 +1,29 @@
-﻿using model.DataAccess;
+﻿using coursework.Componets;
+using model.DataAccess;
 using Prism.Commands;
 using Prism.Mvvm;
 using System;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace coursework.ViewModels
 {
     public class MainWindowViewModel : BindableBase
     {
-        private string _title = "Prism Application";
-        MyDbContext A = new MyDbContext();
+        private readonly AutorizationService autorizationService;
 
+        public MainWindowViewModel(AutorizationService autorizationService, ClockService clockService)
+        {
+            this.autorizationService = autorizationService;
+            this.clockService = clockService;
+            _DatabaseConnectionStatus = autorizationService.CheckUserCredentials();
+        }
+
+        private readonly ClockService clockService;
+
+        
+
+        private string _title = "Prism Application";
         public string Title
         {
             get { return _title; }
@@ -25,15 +38,6 @@ namespace coursework.ViewModels
             set { SetProperty(ref _DatabaseConnectionStatus, value); }
         }
 
-        public MainWindowViewModel()
-        {
-            //ShowMessage();
-            _DatabaseConnectionStatus = A.CheckUserCredentials();
-        }
 
-        private void ShowMessage()
-        {
-            MessageBox.Show(A.CheckUserCredentials()); //Проверка подлючения
-        }
     }
 }

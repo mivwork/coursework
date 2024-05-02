@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace coursework.Componets
+namespace Model2.Views
 {
     /// <summary>
     /// Логика взаимодействия для Autorization.xaml
@@ -24,24 +24,6 @@ namespace coursework.Componets
         public Autorization()
         {
             InitializeComponent();
-        }
-
-        public event EventHandler ButtonClick;
-
-        private void LoginButton_Click(object sender, RoutedEventArgs e)
-        {
-            // вызов события ButtonClick
-            ButtonClick?.Invoke(this, EventArgs.Empty);
-        }
-
-        public string LoginValue
-        {
-            get { return LoginTextBox.Text; }
-        }
-
-
-        public string PasswordValue { 
-            get { return Marshal.PtrToStringBSTR(Marshal.SecureStringToBSTR(PasswordBox.SecurePassword)); } 
         }
     }
 }

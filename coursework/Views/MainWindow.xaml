@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:wm="clr-namespace:coursework.ViewModels"
-        xmlns:comp="clr-namespace:coursework.Componets"
+        
         mc:Ignorable="d" 
         prism:ViewModelLocator.AutoWireViewModel="True"
         d:DataContext="{d:DesignInstance wm:MainWindowViewModel}"
@@ -17,9 +17,7 @@
                 <TextBlock Text="{Binding DatabaseConnectionStatus, FallbackValue='Нет подключения к БД'}" />
             </StatusBarItem>
         </StatusBar>
-        <!--<Frame x:Name="MainFrame" />-->
-        <ContentControl Grid.Row="1" x:Name="contentControl"/>
-            <!--<comp:Autorization DockPanel.Dock="Top"/>-->
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Main"/>
     </DockPanel>
     
 </Window>

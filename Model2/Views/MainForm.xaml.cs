@@ -1,8 +1,7 @@
-﻿using model.DataAccess;
-using model.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,22 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace coursework.Componets
+namespace Model2.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Table.xaml
+    /// Логика взаимодействия для MainTable1.xaml
     /// </summary>
-    public partial class Table : UserControl
+    public partial class MainForm : UserControl
     {
-        MyDbContext C = new MyDbContext();
-        public Table()
+
+        public MainForm()
         {
             InitializeComponent();
-
-            List<Clock> objects = C.getDataClock();
-
-            dataGrid.ItemsSource = objects;
-
+        
         }
+
     }
 }
