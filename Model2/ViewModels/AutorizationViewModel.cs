@@ -13,6 +13,8 @@ using System.Windows.Input;
 using Prism.Commands;
 using Prism.Regions;
 using System.Net;
+using System.Security;
+using Prism.Events;
 
 namespace Model2.ViewModels;
 
@@ -29,11 +31,19 @@ internal class AutorizationViewModel : BindableBase
     }
 
     public ICommand LoginCommand { get; init; }
-    private string _loginValue = "Prism Application";
+
+    private string _loginValue;
     public string LoginValue
     {
         get { return _loginValue; }
-        set { SetProperty(ref _loginValue, value); }
+        set { SetProperty(ref _loginValue, value);}
+    }
+
+    private SecureString _passwordValue; // не работает, невозможно сделать бинд не нарушая mvvm
+    public SecureString PasswordValue // не работает, невозможно сделать бинд не нарушая mvvm
+    {
+        get { return _passwordValue; }
+        set { SetProperty(ref _passwordValue, value);}
     }
 
     private void TryLogin()
@@ -47,7 +57,6 @@ internal class AutorizationViewModel : BindableBase
             MessageBox.Show("Не правильный логин или пароль!", "Ошибка!");
         }
     }
-
 
     /* public string PasswordValue
     {

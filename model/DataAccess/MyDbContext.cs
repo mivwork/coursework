@@ -27,7 +27,7 @@ namespace model.DataAccess
             optionsBuilder.UseNpgsql(connectionString);
         }
 
-        public DbSet<Clock> Clock{ get; set; }
+        public DbSet<Clock> clock{ get; set; }
         public DbSet<Brend_clock> brend_clock{ get; set; }
         public DbSet<Country_clock> country_clock { get; set; }
         public DbSet<Model_clock> model_clock { get; set; }

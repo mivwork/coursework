@@ -1,15 +1,17 @@
-﻿using System;
+﻿using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
+
 
 namespace model.DataAccess;
 public class AutorizationService
 {
-
     private readonly MyDbContext context;
-
     public AutorizationService(MyDbContext context)
     {
         this.context = context;
@@ -35,9 +37,19 @@ public class AutorizationService
             isValidPassword = BCrypt.Net.BCrypt.Verify(enteredPassword, pass);
         }
 
-
         if (user != null && isValidPassword != false)
         {
+            // Создаем объект JObject для записи данных в файл
+            JObject js = new JObject();
+
+            // Добавляем элемент "login"
+            js.Add("login", login);
+
+            // Сериализуем объект в JSON-строку
+            string json = js.ToString();
+
+            // Записываем JSON-строку в файл
+            File.WriteAllText("Data.json", json);
             return true;
         }
         else
@@ -51,7 +63,6 @@ public class AutorizationService
         string result = "";
         try
         {
-            var users = context.Clock.ToList();
             result = "Подключение к базе данных установлено.";
         }
         catch (Exception ex)

@@ -21,12 +21,9 @@ namespace Model2.Views
     /// </summary>
     public partial class MainForm : UserControl
     {
-
         public MainForm()
         {
             InitializeComponent();
-        
         }
-
     }
 }

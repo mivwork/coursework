@@ -10,7 +10,9 @@
         prism:ViewModelLocator.AutoWireViewModel="True"
         d:DataContext="{d:DesignInstance wm:MainWindowViewModel}"
         Background="Transparent"
-        Title="{Binding Title, FallbackValue='hello'}" Height="400" Width="600" >
+        Title="{Binding Title, FallbackValue='hello'}" Height="700" Width="800"
+        WindowStartupLocation="CenterScreen"
+        >
     <DockPanel>
         <StatusBar DockPanel.Dock="Bottom" Height="22">
             <StatusBarItem>

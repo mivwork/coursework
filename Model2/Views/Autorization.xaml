@@ -32,7 +32,7 @@
         <TextBlock Text="Login"/>
             <TextBox Text="{Binding LoginValue}" Grid.Row="0" Margin="0" />
         <TextBlock Text="Password"/>
-        <PasswordBox  Margin="0" />
+            <PasswordBox  PasswordChar="{Binding PasswordValue}" Margin="0" />
          <Button Command="{Binding LoginCommand}" Content="Login" Width="100" Background="LightGreen" Margin="10"/>
 
     </StackPanel>

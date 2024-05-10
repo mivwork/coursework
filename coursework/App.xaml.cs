@@ -23,7 +23,6 @@ namespace coursework
 
         }
 
-
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<ModelModule>().AddModule<Model2Module>();

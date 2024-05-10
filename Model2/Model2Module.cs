@@ -9,7 +9,8 @@ using Prism.Modularity;
 using Model2.Views;
 using Prism.Regions;
 
-namespace model
+
+namespace Model2
 {
     public class Model2Module : IModule
     {
@@ -17,12 +18,14 @@ namespace model
         {
             var provider = containerProvider.Resolve<IRegionManager>();
             provider.RegisterViewWithRegion("Main", nameof(Autorization));
-            provider.RegisterViewWithRegion("Table", nameof(Table));
+            provider.RegisterViewWithRegion("MainForm", nameof(Table));
+            provider.RegisterViewWithRegion("MainForm", nameof(User));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<Table>();
+            containerRegistry.RegisterForNavigation<User>();
             containerRegistry.RegisterForNavigation<MainForm>();
             containerRegistry.RegisterForNavigation<Autorization>();
         }

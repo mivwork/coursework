@@ -9,7 +9,6 @@ namespace model.DataAccess
 {
     public class ClockService
     {
-
         private readonly MyDbContext context;
 
         public ClockService(MyDbContext context)
@@ -19,8 +18,7 @@ namespace model.DataAccess
 
         public List<Clock> getDataClock()
         {
-            List<Clock> data = context.Clock.ToList();
-
+            List<Clock> data = context.clock.ToList();
             // Вернуть список объектов
             return data;
         }

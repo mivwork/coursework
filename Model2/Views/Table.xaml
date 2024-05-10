@@ -9,19 +9,19 @@
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="*"/>
-            <ColumnDefinition Width="400"/>
-            <ColumnDefinition Width ="*"/>
+            <ColumnDefinition Width ="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width ="100"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <DataGrid ItemsControl="{Binding List}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*">
+            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding id}" />
                     <DataGridTextColumn Header="Бренд" Binding="{Binding brend}" />

@@ -4,13 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:prism="http://prismlibrary.com/"
-             xmlns:local="clr-namespace:coursework.Componets"
              mc:Ignorable="d"
              d:DesignHeight="400" d:DesignWidth="600">
+
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="0.4*"/>
+            <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
@@ -19,13 +19,13 @@
 
         <Grid Background="#FF0014CF">
             <StackPanel VerticalAlignment="Top" Height="73" Margin="0,100,0,0">
-                <Button Content="Товар" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White"/>
-                <Button Content="Пользователь" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White"/>
+                <Button Command="{Binding ShowTableCommand}" Content="Товар" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White"/>
+                <Button Command="{Binding ShowUserCommand}" Content="Пользователь" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White"/>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Column="1" Background="White">
-            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Table"/>
+            <ContentControl Grid.Row="1" prism:RegionManager.RegionName="MainForm"/>
         </Grid>
     </Grid>
 </UserControl>

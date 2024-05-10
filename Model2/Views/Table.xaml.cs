@@ -22,7 +22,6 @@ namespace Model2.Views
     /// </summary>
     public partial class Table : UserControl
     {
-
         public Table()
         {
             InitializeComponent();
