@@ -21,7 +21,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*">
+            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#FF0014CF" />
+                        <Setter Property="Foreground" Value="white"/>
+                    </Style>
+                </DataGrid.Resources>    
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding id}" />
                     <DataGridTextColumn Header="Бренд" Binding="{Binding brend}" />
@@ -32,5 +38,6 @@
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
+        <Label Content="Товар" Width="120" FontWeight="Bold" FontSize="16" Grid.Column="1" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
     </Grid>
 </UserControl>
