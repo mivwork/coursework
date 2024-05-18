@@ -45,8 +45,7 @@
         <ComboBox ItemsSource="{Binding ItemShopValue}" DisplayMemberPath="name"  SelectedValue="{Binding Shop}" Grid.Column="1" HorizontalAlignment="Left" Margin="19,54,0,0" VerticalAlignment="Top" FontSize="16" Width="250" Height="25"/>
         <Label Grid.Column="1" Content="Точка продаж" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top"/>
         <Label Grid.Column="1" Content="{Binding CountStr}" FontWeight="Bold"  FontSize="16" HorizontalAlignment="Left" Margin="471,5,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.331" Width="380" Height="30" Grid.ColumnSpan="2"/>
-        <Button Command="{Binding ExcelCommand}" Content="Добавить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="1"/>
-        <Button Command="{Binding ExcelCommand}" Content="Изменить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,105,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="1" RenderTransformOrigin="0.504,2.848"/>
-        <Button Command="{Binding ExcelCommand}" Content="Удалить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,154,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="1"/>
+        <Button Command="{Binding ShowAddClockCommand}" Content="Добавить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="1"/>
+        <Button Command="{Binding ExcelCommand}" Content="Удалить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="1"/>
     </Grid>
 </UserControl>

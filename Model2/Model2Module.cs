@@ -28,6 +28,7 @@ namespace Model2
             containerRegistry.RegisterForNavigation<User>();
             containerRegistry.RegisterForNavigation<MainForm>();
             containerRegistry.RegisterForNavigation<Autorization>();
+            containerRegistry.RegisterForNavigation<AddClock>();
         }
     }
 }

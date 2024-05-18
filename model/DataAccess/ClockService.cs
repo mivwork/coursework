@@ -43,5 +43,40 @@ namespace model.DataAccess
             // Вернуть список объектов
             return data;
         }
+
+        public List<Brend_clock> getDataBrend()
+        {
+            List<Brend_clock> data = context.brend_clock.ToList();
+            // Вернуть список объектов
+            return data;
+        }
+
+        public List<Model_clock> getDataModel()
+        {
+            List<Model_clock> data = context.model_clock.ToList();
+            // Вернуть список объектов
+            return data;
+        }
+
+        public List<Country_clock> getDataCountry()
+        {
+            List<Country_clock> data = context.country_clock.ToList();
+            // Вернуть список объектов
+            return data;
+        }
+
+        public List<Status_clock> getDataStatus()
+        {
+            List<Status_clock> data = context.status_clock.ToList();
+            // Вернуть список объектов
+            return data;
+        }
+
+        public void AddClock(Clock clock)
+        {
+            context.clock.Add(clock);
+            context.SaveChanges();
+        }
+
     }
 }

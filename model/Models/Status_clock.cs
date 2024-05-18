@@ -9,5 +9,6 @@ namespace model.Models
     public class Status_clock
     {
         public int id { get; set; }
+        public string name { get; set; }
     }
 }

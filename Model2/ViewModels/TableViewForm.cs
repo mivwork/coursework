@@ -63,6 +63,7 @@ internal class TableViewModel : BindableBase
         CountStr += ItemValue.Count().ToString();
         TableCommand = new DelegateCommand(getTable);
         ExcelCommand = new DelegateCommand(excel);
+        ShowAddClockCommand = new DelegateCommand(ShowAdd);
     }
 
     private void getTable()
@@ -102,5 +103,14 @@ internal class TableViewModel : BindableBase
         // Сохраняем файл Excel в папке с проектом
         FileInfo file = new FileInfo(Path.Combine(projectPath, "Учет_часов.xlsx"));
         package.SaveAs(file);
+    }
+
+    public ICommand ShowAddClockCommand { get; set; }
+
+    private void ShowAdd()
+    {
+        var region = regionManager.Regions["MainForm"];
+        region.NavigationService.Journal.Clear();
+        regionManager.RequestNavigate("MainForm", "AddClock");
     }
 }

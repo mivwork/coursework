@@ -9,5 +9,6 @@ namespace model.Models
     public class Brend_clock
     {
         public int id { get; set; }
+        public string name { get; set; }
     }
 }
