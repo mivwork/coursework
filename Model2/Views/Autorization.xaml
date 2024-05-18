@@ -9,7 +9,7 @@
     <Grid Background="#FF0014CF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width ="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="240"/>
             <ColumnDefinition Width ="*"/>
         </Grid.ColumnDefinitions>
 
@@ -28,13 +28,12 @@
                 <Setter Property="Margin" Value="1 0"/>
             </Style>
         </StackPanel.Resources>
-        <TextBlock Text="Welcome" Height="64" FontSize="36"/>
-        <TextBlock Text="Login"/>
+        <TextBlock Text="Добро пожаловать!" Height="64" FontSize="24"/>
+        <TextBlock Text="Логин"/>
             <TextBox Text="{Binding LoginValue}" Grid.Row="0" Margin="0" />
-        <TextBlock Text="Password"/>
-            <PasswordBox  PasswordChar="{Binding PasswordValue}" Margin="0" />
-         <Button Command="{Binding LoginCommand}" Content="Login" Width="100" Background="LightGreen" Margin="10"/>
-
-    </StackPanel>
+        <TextBlock Text="Пароль"/>
+            <TextBox Text="{Binding PasswordValue}" Margin="0" />
+            <Button Command="{Binding LoginCommand}" Content="Войти" Width="100" Background="LightGreen" Margin="10"/>
+        </StackPanel>
     </Grid>
 </UserControl>

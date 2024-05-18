@@ -9,10 +9,11 @@ namespace model.Models
     public class Clock
     {
         public int id { get; set; }
-        public int brend {  get; set; }
-        public int model { get; set; }
-        public int country { get; set; }
+        public string brend {  get; set; }
+        public string model { get; set; }
+        public string country { get; set; }
         public int cost { get; set; }
-        public int status { get; set; }
+        public string status { get; set; }
+        public string shop { get; set; }
     }
 }

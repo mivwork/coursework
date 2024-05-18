@@ -3,41 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             
              mc:Ignorable="d" 
-             d:DesignHeight="400" d:DesignWidth="600">
-
+             d:DesignHeight="800" d:DesignWidth="1100"
+             >
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width ="100"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width ="100"/>
+            <ColumnDefinition Width ="50"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width ="50"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="100"/>
+            <RowDefinition Height="200"/>
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged" VerticalScrollBarVisibility="Visible" Height="400">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#FF0014CF" />
                         <Setter Property="Foreground" Value="white"/>
+                        <Setter Property="FontSize" Value="16"/>
                     </Style>
-                </DataGrid.Resources>    
+                </DataGrid.Resources>
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Id" Binding="{Binding id}" />
                     <DataGridTextColumn Header="Бренд" Binding="{Binding brend}" />
                     <DataGridTextColumn Header="Модель" Binding="{Binding model}" />
-                    <DataGridTextColumn Header="Страна" Binding="{Binding country}" />
+                    <DataGridTextColumn Header="Город" Binding="{Binding country}" />
                     <DataGridTextColumn Header="Стоимость" Binding="{Binding cost}" />
                     <DataGridTextColumn Header="Статус" Binding="{Binding status}" />
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
-        <Label Content="Товар" Width="120" FontWeight="Bold" FontSize="16" Grid.Column="1" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        
+        <Label Content="Товар" Width="120" FontWeight="Bold" FontSize="18" Grid.Column="1" HorizontalAlignment="Left" Margin="10,84,0,0" VerticalAlignment="Top" Height="31"/>
+        <Button Command="{Binding TableCommand}" Content="Поиск" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="307,54,0,0" VerticalAlignment="Top" Height="25" Background="LightGreen"/>
+        <ComboBox ItemsSource="{Binding ItemShopValue}" DisplayMemberPath="name"  SelectedValue="{Binding Shop}" Grid.Column="1" HorizontalAlignment="Left" Margin="19,54,0,0" VerticalAlignment="Top" FontSize="16" Width="250" Height="25"/>
+        <Label Grid.Column="1" Content="Точка продаж" FontWeight="Bold"  FontSize="18" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top"/>
+        <Label Grid.Column="1" Content="{Binding CountStr}" FontWeight="Bold"  FontSize="16" HorizontalAlignment="Left" Margin="610,0,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.331" Width="380" Height="30"/>
     </Grid>
 </UserControl>

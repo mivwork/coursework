@@ -22,7 +22,6 @@ namespace model.DataAccess
             // Считываем JSON-строку из файла
             string json = File.ReadAllText("Data.json");
 
-            // Десериализуем JSON-строку в объект JObject
             JObject js = JObject.Parse(json);
 
             // Читаем значение элемента "login"

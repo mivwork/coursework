@@ -39,8 +39,8 @@ internal class AutorizationViewModel : BindableBase
         set { SetProperty(ref _loginValue, value);}
     }
 
-    private SecureString _passwordValue; // не работает, невозможно сделать бинд не нарушая mvvm
-    public SecureString PasswordValue // не работает, невозможно сделать бинд не нарушая mvvm
+    private string _passwordValue;
+    public string PasswordValue
     {
         get { return _passwordValue; }
         set { SetProperty(ref _passwordValue, value);}
@@ -48,7 +48,7 @@ internal class AutorizationViewModel : BindableBase
 
     private void TryLogin()
     {
-        if (autorizationService.LoginAndPassword(LoginValue, "1234") == true)
+        if (PasswordValue != null && autorizationService.LoginAndPassword(LoginValue, PasswordValue) == true)
         {
             regionManager.RequestNavigate("Main", "MainForm");
         }
@@ -57,9 +57,4 @@ internal class AutorizationViewModel : BindableBase
             MessageBox.Show("Не правильный логин или пароль!", "Ошибка!");
         }
     }
-
-    /* public string PasswordValue
-    {
-        get { return Marshal.PtrToStringBSTR(Marshal.SecureStringToBSTR(PasswordBox.SecurePassword)); }
-    }*/
 }

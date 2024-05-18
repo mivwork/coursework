@@ -33,5 +33,6 @@ namespace model.DataAccess
         public DbSet<Model_clock> model_clock { get; set; }
         public DbSet<Status_clock> status_clock { get; set; }
         public DbSet<Users> users { get; set; }
+        public DbSet<Shop> shop { get; set; }
     }
 }

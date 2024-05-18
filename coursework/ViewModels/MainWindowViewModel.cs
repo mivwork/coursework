@@ -18,7 +18,7 @@ namespace coursework.ViewModels
             _DatabaseConnectionStatus = autorizationService.CheckUserCredentials();
         }
 
-        private string _title = "Clock Service";
+        private string _title = "Учет часов";
         public string Title
         {
             get { return _title; }

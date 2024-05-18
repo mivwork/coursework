@@ -18,7 +18,7 @@ namespace model
                 .RegisterSingleton<MyDbContext>()
                 .RegisterSingleton<AutorizationService>()
                 .RegisterSingleton<ClockService>()
-                .RegisterSingleton<UserService>() // 10.05
+                .RegisterSingleton<UserService>()
                 ;
         }
     }
