@@ -54,7 +54,7 @@ internal class AutorizationViewModel : BindableBase
         }
         else
         {
-            MessageBox.Show("Не правильный логин или пароль!", "Ошибка!");
+            MessageBox.Show("Неправильный логин или пароль!", "Ошибка!");
         }
     }
 }
