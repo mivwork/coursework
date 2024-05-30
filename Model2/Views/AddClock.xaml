@@ -36,7 +36,7 @@
                 </Style>
 
             </StackPanel.Resources>
-            <Label Content="Добавление часов" Width="156" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Добавление часов" Width="194" FontWeight="Bold" FontSize="20"/>
             <StackPanel Orientation="Horizontal">
                 <Grid Width="455">
                     <Grid.ColumnDefinitions>
@@ -44,26 +44,26 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
-                        <Label  Content="Бренд:"  FontSize="16"/>
-                        <ComboBox ItemsSource="{Binding ItemBrendValue}" DisplayMemberPath="name"  SelectedValue="{Binding Brend_clock}" Width="210"/>
-                        <Label  Content="Модель:" FontSize="16"/>
-                        <ComboBox ItemsSource="{Binding ItemModelValue}" DisplayMemberPath="name"  SelectedValue="{Binding Model_clock}" Width="210"/>
-                        <Label  Content="Город:" FontSize="16"/>
-                        <ComboBox ItemsSource="{Binding ItemCountryValue}" DisplayMemberPath="name"  SelectedValue="{Binding Country_clock}"  Width="210"/>
+                        <Label  Content="Бренд:"  FontSize="20"/>
+                        <ComboBox ItemsSource="{Binding ItemBrendValue}" DisplayMemberPath="name"  SelectedValue="{Binding Brend_clock}" Width="210" FontSize="16"/>
+                        <Label  Content="Модель:" FontSize="20"/>
+                        <ComboBox ItemsSource="{Binding ItemModelValue}" DisplayMemberPath="name"  SelectedValue="{Binding Model_clock}" Width="210" FontSize="16"/>
+                        <Label  Content="Город:" FontSize="20"/>
+                        <ComboBox ItemsSource="{Binding ItemCountryValue}" DisplayMemberPath="name"  SelectedValue="{Binding Country_clock}"  Width="210" FontSize="16"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Цена:" FontSize="16"/>
-                        <TextBox Text="{Binding Cost_clock}" Width="210" Height="22"/>
-                        <Label Content="Статус:" FontSize="16"/>
-                        <ComboBox ItemsSource="{Binding ItemStatusValue}" DisplayMemberPath="name"  SelectedValue="{Binding Status_clock}" Width="210"/>
-                        <Label Content="Магазин:" FontSize="16"/>
-                        <ComboBox ItemsSource="{Binding ItemShopsValue}" DisplayMemberPath="name"  SelectedValue="{Binding Shops}" Width="210"/>
+                        <Label Content="Цена:" FontSize="20"/>
+                        <TextBox Text="{Binding Cost_clock}" Width="210" Height="28" FontSize="16"/>
+                        <Label Content="Статус:" FontSize="20"/>
+                        <ComboBox ItemsSource="{Binding ItemStatusValue}" DisplayMemberPath="name"  SelectedValue="{Binding Status_clock}" Width="210" FontSize="16"/>
+                        <Label Content="Магазин:" FontSize="20"/>
+                        <ComboBox ItemsSource="{Binding ItemShopsValue}" DisplayMemberPath="name"  SelectedValue="{Binding Shops}" Width="210" FontSize="16" Height="28"/>
                     </StackPanel>
 
                 </Grid>
             </StackPanel>
         </StackPanel>
-        <Button Command="{Binding AddandReturnTableCommand}" Content="Добавить" Grid.Column="1" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Background="LightGreen" Margin="626,12,0,0" Grid.Row="2"/>
-        <Button Command="{Binding ReturnTableCommand}" Content="Отмена" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Height="25" Background="#FF0014CF" Foreground="white" Grid.Row="2"/>
+        <Button Command="{Binding AddandReturnTableCommand}" Content="Добавить" Grid.Column="1" Width="100" HorizontalAlignment="Left" VerticalAlignment="Top" Height="35" Background="LightGreen" Margin="626,12,0,0" Grid.Row="2" FontSize="18"/>
+        <Button Command="{Binding ReturnTableCommand}" Content="Отмена" Grid.Column="1" Width="100" HorizontalAlignment="Left" Margin="10,12,0,0" VerticalAlignment="Top" Height="35" Background="#FF0014CF" Foreground="white" Grid.Row="2" FontSize="18"/>
     </Grid>
 </UserControl>

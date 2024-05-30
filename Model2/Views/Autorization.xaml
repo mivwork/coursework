@@ -28,12 +28,12 @@
                 <Setter Property="Margin" Value="1 0"/>
             </Style>
         </StackPanel.Resources>
-        <TextBlock Text="Добро пожаловать!" Height="64" FontSize="24"/>
-        <TextBlock Text="Логин"/>
-            <TextBox Text="{Binding LoginValue}" Grid.Row="0" Margin="0" />
-        <TextBlock Text="Пароль"/>
-            <TextBox Text="{Binding PasswordValue}" Margin="0" />
-            <Button Command="{Binding LoginCommand}" Content="Войти" Width="100" Background="LightGreen" Margin="10"/>
+        <TextBlock Text="Добро пожаловать!" Height="42" FontSize="26"/>
+            <TextBlock Text="Логин" FontSize="22"/>
+            <TextBox Text="{Binding LoginValue}" Grid.Row="0" Margin="0" Height="25" FontSize="18" />
+            <TextBlock Text="Пароль" FontSize="22" Height="28" />
+            <TextBox Text="{Binding PasswordValue}" Margin="0" FontFamily="Webdings" FontSize="18" Height="25" />
+            <Button Command="{Binding LoginCommand}" Content="Войти" Width="100" Background="LightGreen" Margin="20" Height="30" FontSize="18"/>
         </StackPanel>
     </Grid>
 </UserControl>

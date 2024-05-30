@@ -11,12 +11,12 @@
         d:DataContext="{d:DesignInstance wm:MainWindowViewModel}"
         Background="Transparent"
         Title="{Binding Title, FallbackValue='hello'}" Height="800" Width="1100" ResizeMode="CanMinimize"
-        WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen" FontSize="16"
         >
     <DockPanel>
-        <StatusBar DockPanel.Dock="Bottom" Height="22">
-            <StatusBarItem>
-                <TextBlock Text="{Binding DatabaseConnectionStatus, FallbackValue='Нет подключения к БД'}" />
+        <StatusBar DockPanel.Dock="Bottom" Height="30">
+            <StatusBarItem FontSize="22" >
+                <TextBlock Text="{Binding DatabaseConnectionStatus, FallbackValue='Нет подключения к БД'}" FontSize="20" />
             </StatusBarItem>
         </StatusBar>
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="Main"/>

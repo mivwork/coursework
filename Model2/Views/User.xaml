@@ -36,7 +36,7 @@
                 </Style>
 
             </StackPanel.Resources>
-            <Label Content="Пользователь" Width="120" FontWeight="Bold" FontSize="16"/>
+            <Label Content="Пользователь" Width="175" FontWeight="Bold" FontSize="24"/>
             <StackPanel Orientation="Horizontal">
                 <Grid Width="455">
                     <Grid.ColumnDefinitions>
@@ -44,16 +44,16 @@
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
-                        <Label  Content="Фамилия:"  FontSize="16"/>
-                        <Label  Content="{Binding LastnameValue}"/>
-                        <Label  Content="Имя:" FontSize="16"/>
-                        <Label  Content="{Binding NameValue}"/>
-                        <Label  Content="Отчество:" FontSize="16"/>
-                        <Label  Content="{Binding FirstnameValue}"/>
+                        <Label  Content="Фамилия:"  FontSize="22"/>
+                        <Label  Content="{Binding LastnameValue}" FontSize="18"/>
+                        <Label  Content="Имя:" FontSize="22"/>
+                        <Label  Content="{Binding NameValue}" FontSize="18"/>
+                        <Label  Content="Отчество:" FontSize="22"/>
+                        <Label  Content="{Binding FirstnameValue}" FontSize="18"/>
                     </StackPanel>
                     <StackPanel Grid.Column="1">
-                        <Label Content="Логин:" FontSize="16"/>
-                        <Label  Content="{Binding UserloginValue}"/>
+                        <Label Content="Логин:" FontSize="22"/>
+                        <Label  Content="{Binding UserloginValue}" FontSize="18"/>
                     </StackPanel>
 
                 </Grid>
