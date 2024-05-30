@@ -38,15 +38,15 @@
             </StackPanel.Resources>
             <Label Content="Параметры" Width="194" FontWeight="Bold" FontSize="20"/>
             <StackPanel Orientation="Horizontal">
-                <Grid Width="819" Height="320">
+                <Grid Width="666" Height="320">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Column="0" Margin="0,0,0,35">
+                    <StackPanel Grid.Column="0" Margin="0,0,29,35">
                         <Label Content="Бренды" Width="194" FontWeight="Bold" FontSize="20"/>
-                        <DataGrid ItemsSource="{Binding ItemBrend}" SelectedItem="{Binding Brend_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16">
+                        <DataGrid ItemsSource="{Binding ItemBrend}" SelectedItem="{Binding Brend_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16" Width="200">
                             <DataGrid.Resources>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="Background" Value="#FF0014CF" />
@@ -62,7 +62,7 @@
                     </StackPanel>
                     <StackPanel Grid.Column="1" Margin="0,0,0,35">
                         <Label Content="Модели" Width="194" FontWeight="Bold" FontSize="20"/>
-                        <DataGrid ItemsSource="{Binding ItemModel}" SelectedItem="{Binding Model_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16">
+                        <DataGrid ItemsSource="{Binding ItemModel}" SelectedItem="{Binding Model_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16" Width="200">
                             <DataGrid.Resources>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="Background" Value="#FF0014CF" />
@@ -78,7 +78,7 @@
                     </StackPanel>
                     <StackPanel Grid.Column="2" Margin="0,0,0,35">
                         <Label Content="Города" Width="194" FontWeight="Bold" FontSize="20"/>
-                        <DataGrid ItemsSource="{Binding ItemCountry}" SelectedItem="{Binding Country_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16">
+                        <DataGrid ItemsSource="{Binding ItemCountry}" SelectedItem="{Binding Country_value}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" VerticalScrollBarVisibility="Visible" Height="250" FontSize="16" Width="200">
                             <DataGrid.Resources>
                                 <Style TargetType="{x:Type DataGridColumnHeader}">
                                     <Setter Property="Background" Value="#FF0014CF" />
@@ -95,8 +95,8 @@
                 </Grid>
             </StackPanel>
         </StackPanel>
-        <Button Command="{Binding AddandReturnTableCommand}" Content="Добавить" Grid.Column="1" Width="123" HorizontalAlignment="Left" VerticalAlignment="Top" Height="30" Background="LightGreen" Margin="331,100,0,0" Grid.Row="2" FontSize="18"/>
-        <ComboBox ItemsSource="{Binding ItemCountryValue}" DisplayMemberPath="name"  SelectedValue="{Binding Country_clock}" Grid.Column="1" HorizontalAlignment="Left" Margin="313,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="160" Height="30" FontSize="16" />
-        <TextBox Text="{Binding Cost_clock}" Grid.Column="1" HorizontalAlignment="Left" Margin="313,55,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Height="30"/>
+        <Button Command="{Binding AddandReturnTableCommand}" Content="Добавить" Grid.Column="1" Width="124" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Background="LightGreen" Margin="0,120,0,0" Grid.Row="2" FontSize="18"/>
+        <ComboBox ItemsSource="{Binding ItemCountryValue}" DisplayMemberPath="name"  SelectedValue="{Binding Country_clock}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,21,0,0" Grid.Row="2" VerticalAlignment="Top" Width="160" Height="30" FontSize="16" />
+        <TextBox Text="{Binding Cost_clock}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,68,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Height="30"/>
     </Grid>
 </UserControl>
