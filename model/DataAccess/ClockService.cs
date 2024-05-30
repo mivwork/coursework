@@ -83,5 +83,33 @@ namespace model.DataAccess
             context.SaveChanges();
         }
 
+        public void Add(string value, string table)
+        {
+            Model_clock model;
+            Brend_clock brend;
+            Country_clock country;
+            if (table == "Бренды")
+            {
+                brend = new Brend_clock();
+                brend.name = value;
+                context.brend_clock.Add(brend);
+                context.SaveChanges();
+            }
+            else if (table == "Модели")
+            {
+                model = new Model_clock();
+                model.name = value;
+                context.model_clock.Add(model);
+                context.SaveChanges();
+            }
+            else if (table == "Города")
+            {
+                country = new Country_clock();
+                country.name = value;
+                context.country_clock.Add(country);
+                context.SaveChanges();
+            }
+        }
+
     }
 }

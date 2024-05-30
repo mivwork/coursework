@@ -29,9 +29,10 @@ internal class ReferencesFormViewModel : BindableBase
             ItemBrend = clockService.getDataBrend();
             ItemModel = clockService.getDataModel();
             ItemCountry = clockService.getDataCountry();
+            AddValueCommand = new DelegateCommand(setTable);
         }
 
-        public ICommand AddandReturnTableCommand { get; set; }
+        public ICommand AddValueCommand { get; set; }
         private Clock clock;
 
         private List<Brend_clock> _itemBrend;
@@ -76,4 +77,37 @@ internal class ReferencesFormViewModel : BindableBase
             set { SetProperty(ref _country_value, value); }
         }
 
+        private List<string> _table_value = new List<string> {
+                "Бренды",
+                "Модели",
+                "Города" 
+        };
+
+        public List<string> Table_value 
+        { get { 
+            return _table_value; }
+          set {}
+        }
+
+        private string _v_value;
+        public string V_value
+        {
+            get { return _v_value; }
+            set { SetProperty(ref _v_value, value); }
+        }
+
+        private string _zn_value;
+        public string Zn_value
+        {
+            get { return _zn_value; }
+            set { SetProperty(ref _zn_value, value); }
+        }
+
+        public void setTable()
+        {
+            clockService.Add(Zn_value, V_value);
+            ItemBrend = clockService.getDataBrend();
+            ItemModel = clockService.getDataModel();
+            ItemCountry = clockService.getDataCountry();
+        }
 }

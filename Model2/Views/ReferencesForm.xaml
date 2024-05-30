@@ -95,8 +95,10 @@
                 </Grid>
             </StackPanel>
         </StackPanel>
-        <Button Command="{Binding AddandReturnTableCommand}" Content="Добавить" Grid.Column="1" Width="124" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Background="LightGreen" Margin="0,120,0,0" Grid.Row="2" FontSize="18"/>
-        <ComboBox ItemsSource="{Binding ItemCountryValue}" DisplayMemberPath="name"  SelectedValue="{Binding Country_clock}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,21,0,0" Grid.Row="2" VerticalAlignment="Top" Width="160" Height="30" FontSize="16" />
-        <TextBox Text="{Binding Cost_clock}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,68,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Height="30"/>
+        <Button Command="{Binding AddValueCommand}" Content="Добавить" Grid.Column="1" Width="124" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Background="LightGreen" Grid.Row="2" FontSize="18" Margin="0,150,0,0"/>
+        <ComboBox ItemsSource="{Binding Table_value}" SelectedValue="{Binding V_value}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,45,0,0" Grid.Row="2" VerticalAlignment="Top" Width="160" Height="30" FontSize="16" />
+        <TextBox Text="{Binding Zn_value}" Grid.Column="1" HorizontalAlignment="Center" Margin="0,105,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="16" Height="30"/>
+        <Label Grid.Column="1" Content="Таблица" HorizontalAlignment="Center" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="20"/>
+        <Label Grid.Column="1" Content="Значение" HorizontalAlignment="Center" Margin="0,75,0,0" Grid.Row="2" VerticalAlignment="Top" FontSize="20"/>
     </Grid>
 </UserControl>

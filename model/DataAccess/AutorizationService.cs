@@ -28,7 +28,7 @@ public class AutorizationService
             pass = context.users.Where(u => u.login == login).FirstOrDefault().password;
         }
         // Хеширование пароля
-        //string password1 = "1234";
+        //string password1 = "Пароль";
         //string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password1);
 
         string enteredPassword = password;
