@@ -1,6 +1,4 @@
-﻿using model.DataAccess;
-using model.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,11 +16,11 @@ using System.Windows.Shapes;
 namespace Model2.Views
 {
     /// <summary>
-    /// Логика взаимодействия для Table.xaml
+    /// Логика взаимодействия для References.xaml
     /// </summary>
-    public partial class Table : UserControl
+    public partial class References : UserControl
     {
-        public Table()
+        public References()
         {
             InitializeComponent();
         }
