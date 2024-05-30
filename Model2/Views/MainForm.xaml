@@ -20,7 +20,7 @@
         <Grid Background="#FF0014CF">
             <StackPanel VerticalAlignment="Top" Height="107" Margin="0,100,0,0">
                 <Button Command="{Binding ShowTableCommand}" Content="Товар" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White" FontSize="22"/>
-                <Button Command="{Binding ShowUserCommand}" Content="Справочники" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White" FontSize="22"/>
+                <Button Command="{Binding ShowReferencesCommand}" Content="Справочники" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White" FontSize="22"/>
                 <Button Command="{Binding ShowUserCommand}" Content="Пользователь" Height="35" Background="#FF0014CF" BorderBrush="Gray"  Foreground="White" FontSize="22"/>
             </StackPanel>
         </Grid>

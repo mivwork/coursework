@@ -21,6 +21,7 @@ namespace Model2
             provider.RegisterViewWithRegion("MainForm", nameof(Table));
             provider.RegisterViewWithRegion("MainForm", nameof(User));
             provider.RegisterViewWithRegion("MainForm", nameof(AddClock));
+            provider.RegisterViewWithRegion("MainForm", nameof(ReferencesForm));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
@@ -30,6 +31,7 @@ namespace Model2
             containerRegistry.RegisterForNavigation<MainForm>();
             containerRegistry.RegisterForNavigation<Autorization>();
             containerRegistry.RegisterForNavigation<AddClock>();
+            containerRegistry.RegisterForNavigation<ReferencesForm>();
         }
     }
 }

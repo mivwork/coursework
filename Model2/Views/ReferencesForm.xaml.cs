@@ -18,11 +18,12 @@ namespace Model2.Views
     /// <summary>
     /// Логика взаимодействия для References.xaml
     /// </summary>
-    public partial class References : UserControl
+    public partial class ReferencesForm : UserControl
     {
-        public References()
+        public ReferencesForm()
         {
             InitializeComponent();
         }
     }
+
 }
