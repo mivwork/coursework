@@ -26,5 +26,6 @@ namespace Model2.Views
         {
             InitializeComponent();
         }
+
     }
 }
