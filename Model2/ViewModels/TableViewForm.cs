@@ -23,6 +23,7 @@ internal class TableViewModel : BindableBase
     private readonly ClockService clockService;
     public ICommand TableCommand { get; init; }
     public ICommand ExcelCommand { get; init; }
+    public ICommand DelCommand {  get; init; }
     ExcelPackage package;
     private Timer _timer;
 
@@ -33,6 +34,13 @@ internal class TableViewModel : BindableBase
     {
         get { return _itemValue; }
         set { SetProperty(ref _itemValue, value); }
+    }
+
+    private Clock _selectitemValue;
+    public Clock SelectItemValue
+    {
+        get { return _selectitemValue; }
+        set { SetProperty(ref _selectitemValue, value); }
     }
 
     private List<Shop> _itemShopValue;
@@ -66,6 +74,7 @@ internal class TableViewModel : BindableBase
         TableCommand = new DelegateCommand(getTable);
         ExcelCommand = new DelegateCommand(excel);
         ShowAddClockCommand = new DelegateCommand(ShowAdd);
+        DelCommand = new DelegateCommand(del);
 
         _timer = new Timer(5000);
         _timer.Elapsed += OnTimerElapsed;
@@ -83,6 +92,12 @@ internal class TableViewModel : BindableBase
     private void getTable()
     {
         ItemValue = clockService.getDataClockShop(Shop);
+        CountStr = "Количество строк: " + ItemValue.Count().ToString();
+    }
+
+    private void del()
+    {
+        clockService.DelClock(SelectItemValue);
         CountStr = "Количество строк: " + ItemValue.Count().ToString();
     }
 

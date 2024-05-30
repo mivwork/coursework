@@ -20,6 +20,7 @@ namespace Model2
             provider.RegisterViewWithRegion("Main", nameof(Autorization));
             provider.RegisterViewWithRegion("MainForm", nameof(Table));
             provider.RegisterViewWithRegion("MainForm", nameof(User));
+            provider.RegisterViewWithRegion("MainForm", nameof(AddClock));
         }
 
         public void RegisterTypes(IContainerRegistry containerRegistry)

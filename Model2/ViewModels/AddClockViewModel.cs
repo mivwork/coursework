@@ -2,6 +2,7 @@
 using model.DataAccess;
 using model.Models;
 using Model2.Views;
+using OfficeOpenXml.Table.PivotTable;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
@@ -117,18 +118,29 @@ internal class AddClockViewModel : BindableBase
 
     private void AddandReturnTable()
     {
-        clock = new Clock();
-        clock.brend = Brend_clock.name;
-        clock.model = Model_clock.name;
-        clock.country = Country_clock.name;
-        clock.cost = Cost_clock;
-        clock.status = Status_clock.name;
-        clock.shop = Shops.name;
-        clockService.AddClock(clock);
-
-        var region = regionManager.Regions["MainForm"];
-        region.NavigationService.Journal.Clear();
-        regionManager.RequestNavigate("MainForm", "Table");
+        try
+        {
+            clock = new Clock();
+            if (Brend_clock == null || Model_clock == null || Country_clock == null || Status_clock == null || Shops == null)
+            {
+                throw new InvalidOperationException("Не заполнены все поля");
+            } else
+            {
+                clock.brend = Brend_clock.name;
+                clock.model = Model_clock.name;
+                clock.country = Country_clock.name;
+                clock.cost = Cost_clock;
+                clock.status = Status_clock.name;
+                clock.shop = Shops.name;
+                clockService.AddClock(clock);
+            }
+            var region = regionManager.Regions["MainForm"];
+            region.NavigationService.Journal.Clear();
+            regionManager.RequestNavigate("MainForm", "Table");
+        } catch (Exception ex)
+        {
+            MessageBox.Show("Ошибка: " + ex.Message, "Ошибка!");
+        }
     }
 
     private void ReturnTable()

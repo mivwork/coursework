@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged" VerticalScrollBarVisibility="Visible" Height="390" FontSize="16">
+            <DataGrid ItemsSource="{Binding ItemValue}" SelectedItem="{Binding SelectItemValue}"  AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged" VerticalScrollBarVisibility="Visible" Height="390" FontSize="16">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#FF0014CF" />
@@ -46,6 +46,6 @@
         <Label Grid.Column="1" Content="Точка продаж" FontWeight="Bold"  FontSize="20" HorizontalAlignment="Left" Margin="5,27,0,0" VerticalAlignment="Top"/>
         <Label Grid.Column="1" Content="{Binding CountStr}" FontWeight="Bold"  FontSize="20" HorizontalAlignment="Left" Margin="471,5,0,0" Grid.Row="2" VerticalAlignment="Top" RenderTransformOrigin="0.905,0.331" Width="380" Height="35" Grid.ColumnSpan="2"/>
         <Button Command="{Binding ShowAddClockCommand}" Content="Добавить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,59,0,0" VerticalAlignment="Top" Height="35" Background="#FF0014CF" Foreground="white" Grid.Row="1" FontSize="18"/>
-        <Button Command="{Binding ExcelCommand}" Content="Удалить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Background="#FF0014CF" Foreground="white" Grid.Row="1" FontSize="18"/>
+        <Button Command="{Binding DelCommand}" Content="Удалить" Grid.Column="2" Width="100" HorizontalAlignment="Center" Margin="0,110,0,0" VerticalAlignment="Top" Height="35" Background="#FF0014CF" Foreground="white" Grid.Row="1" FontSize="18"/>
     </Grid>
 </UserControl>

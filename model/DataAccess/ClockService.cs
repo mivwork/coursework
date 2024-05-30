@@ -78,5 +78,10 @@ namespace model.DataAccess
             context.SaveChanges();
         }
 
+        public void DelClock(Clock clock) { 
+            context.clock.Remove(clock);
+            context.SaveChanges();
+        }
+
     }
 }
