@@ -20,7 +20,7 @@
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" Grid.Column="1">
-            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged" VerticalScrollBarVisibility="Visible" Height="489" FontSize="16">
+            <DataGrid ItemsSource="{Binding ItemValue}" AutoGenerateColumns="False" CanUserAddRows="False" ColumnWidth="*" SelectionChanged="DataGrid_SelectionChanged" VerticalScrollBarVisibility="Visible" Height="390" FontSize="16">
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#FF0014CF" />

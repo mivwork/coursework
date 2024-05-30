@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using OfficeOpenXml;
+using System.Timers;
 
 namespace Model2.ViewModels;
 
@@ -23,6 +24,7 @@ internal class TableViewModel : BindableBase
     public ICommand TableCommand { get; init; }
     public ICommand ExcelCommand { get; init; }
     ExcelPackage package;
+    private Timer _timer;
 
     string projectPath = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
 
@@ -64,6 +66,18 @@ internal class TableViewModel : BindableBase
         TableCommand = new DelegateCommand(getTable);
         ExcelCommand = new DelegateCommand(excel);
         ShowAddClockCommand = new DelegateCommand(ShowAdd);
+
+        _timer = new Timer(5000);
+        _timer.Elapsed += OnTimerElapsed;
+        _timer.Start();
+
+        getTable();
+
+    }
+
+    private void OnTimerElapsed(object sender, ElapsedEventArgs e)
+    {
+        getTable();
     }
 
     private void getTable()
